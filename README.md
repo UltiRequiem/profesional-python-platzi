@@ -1,1 +1,3 @@
-# professional-python-platzi
+# Proffesional Python Course
+
+![Cover](./assets/cover.jpeg)
