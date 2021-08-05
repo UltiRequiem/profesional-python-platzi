@@ -6,19 +6,19 @@ def execution_time(func):
         init = dt.now()
         func(*args, **kwargs)
         final = dt.now()
-        print(f"Total execution time is {final - init} seconds.")
+        print(f"Total execution time of {func.__name__} is {final - init} seconds.")
 
     return wrapper
 
 
 @execution_time
-def test_execution_time():
-    for _ in range(100000):
-        pass
+def test_execution_time(times: int = 10, i: int = 0, mount: int = 1):
+    for _ in range(times):
+        i += mount + _
 
 
 @execution_time
-def test_sum(a: int, b: int) -> int:
+def test_sum(a: int = 5, b: int = 5) -> int:
     return a + b
 
 
@@ -28,7 +28,6 @@ def say_hi(name: str = "Zero") -> str:
 
 
 if __name__ == "__main__":
-    test_execution_time()
+    test_execution_time(10000)
     test_sum(5, 5)
     say_hi()
-    say_hi("Susaku")
