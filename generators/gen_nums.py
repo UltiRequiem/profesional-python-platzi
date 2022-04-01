@@ -1,5 +1,5 @@
 def num_generators(max_num: int):
-    for num in range(1,max_num):
+    for num in range(1, max_num):
         yield num
 
 
